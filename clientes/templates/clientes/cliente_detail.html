@@ -1,0 +1,15 @@
+{% extends "clientes/base.html" %}
+{% block title %}Detalle{% endblock %}
+{% block content %}
+  <div class="card">
+    <div class="card-body">
+      <h3>{{ cliente.nombre }}</h3>
+      <p><strong>Clave:</strong> {{ cliente.clave }}</p>
+      <p><strong>Email:</strong> {{ cliente.email }}</p>
+      <p><strong>Teléfono:</strong> {{ cliente.telefono }}</p>
+      <a class="btn btn-outline-primary" href="{% url 'clientes:update' cliente.pk %}">Editar</a>
+      <a class="btn btn-outline-danger" href="{% url 'clientes:delete' cliente.pk %}">Eliminar</a>
+      <a class="btn btn-secondary" href="{% url 'clientes:list' %}">Volver</a>
+    </div>
+  </div>
+{% endblock %}

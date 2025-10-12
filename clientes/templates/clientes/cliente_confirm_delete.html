@@ -1,0 +1,12 @@
+{% extends "clientes/base.html" %}
+{% block title %}Eliminar{% endblock %}
+{% block content %}
+  <div class="alert alert-warning">
+    ¿Eliminar definitivamente a <strong>{{ object.nombre }}</strong>?
+  </div>
+  <form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger">Sí, eliminar</button>
+    <a class="btn btn-secondary" href="{% url 'clientes:list' %}">Cancelar</a>
+  </form>
+{% endblock %}
