@@ -1,26 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>Estoy en index !!!</p>
-    <!-- Esto es un comentario 
-    <p>{{mensaje}}</p>
-    <p>{{mensaje2}}</p>
-    <p>{{signos}}</p>
-    -->
-    <a href="http://www.google.com">Esto es una ancla!!!</a> <br>
-    <a href="http://www.google.com">Aries!!!</a> <br>
-    <a href="http://www.google.com">Geminis!!!</a> <br>
-    <a href="http://www.google.com">Tauro!!!</a> <br>
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+     Signos Zodiacales
+{% endblock %}
+
+{% block content %}
+
+    {% include 'zodiac2/includes/header.html' %}
 
     <ul>
         {% for signo in signos %}
             <li><a href="{% url 'get-by-name' signo %}">{{signo | title}}</a></li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}
