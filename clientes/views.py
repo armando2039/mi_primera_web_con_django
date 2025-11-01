@@ -2,9 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 #9) Views (la “capa de orquestación”)
-
 #Usamos class-based views para velocidad y limpieza.
-
 #En clientes/views.py:
 
 from django.urls import reverse_lazy
